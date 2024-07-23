@@ -1,0 +1,123 @@
+:root {
+    --blue: #007cff;
+    --dark-blue: #0000FFFF;
+    --white: #FFFFFFFF;
+    --orange: #ffa500;
+    --green: #009d00;
+    --purple: #9d0e9d;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 8.6fr 1fr;
+    gap: 5px;
+    color: var(--white);
+}
+
+.header {
+    display: grid;
+    align-items: center;
+    padding: 30px 15px;
+    background-color: var(--blue);
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    width: 80%;
+    text-align: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.main-content, .side-bar {
+    display: grid;
+    align-content: center;
+}
+
+.main-content {
+    grid-column: 1/4;
+    background-color: var(--green);
+}
+
+.side-bar {
+    background-color: var(--purple);
+}
+
+.twin {
+    display: grid;
+    grid-column: span 2;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--orange);
+}
+
+.footer {
+    display: grid;
+    align-items: center;
+    padding: 30px 15px;
+    background-color: var(--dark-blue);
+}
+
+@media only screen and (max-width: 1024px) {
+    .container-wrapper {
+        grid-template-rows: 1fr 7.5fr 1fr;
+    }
+
+    .main-wrapper {
+        width: 80%;
+        grid-template-columns: 1fr;
+        gap: 0;
+        row-gap: 5px;
+    }
+
+    .main-content {
+        grid-column: 1;
+    }
+
+    .side-bar {
+        grid-column: 1;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .container-wrapper {
+        grid-template-rows: 1fr 7.5fr 1fr;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        grid-column: 1;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .container-wrapper {
+        grid-template-rows: 1fr 7.5fr 1fr;
+    }
+
+    .main-wrapper {
+        width: 100%;
+        grid-template-columns: 1fr;
+    }
+
+    .main-content {
+        grid-column: 1;
+    }
+}
